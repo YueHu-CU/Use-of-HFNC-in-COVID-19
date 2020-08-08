@@ -31,4 +31,4 @@ Python is our programming language. You will need the following Python packages
 The `Data` folder contains the data files to replicate results in the paper. 
 
 ## Code
-The `Home` folder contains the code to replicate results in the paper.
+The `Home` folder contains the code to replicate results in the paper. The `Data` folder should be placed within a parent folder that contains all the code. 
