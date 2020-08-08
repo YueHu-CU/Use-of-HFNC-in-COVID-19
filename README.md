@@ -31,4 +31,9 @@ Python is our programming language. You will need the following Python packages
 The `Data` folder contains the data files to replicate results in the paper. 
 
 ## Code
-The `Home` folder contains the code to replicate results in the paper. The `Data` folder should be placed within a parent folder that contains all the code. 
+
+- The `Home` folder contains the code to replicate results in the paper. 
+
+- The `Data` folder should be placed within a parent folder that contains all the code. 
+
+- The codes should be run sequentially. For example, to examine the impact of use of high-flow nasal cannula on mortality in the United States (Figure 2 in the paper), the user needs to first run `Parameters.py` to set parameters on the national level, and then run `Compare Policies.py` to obtain the output. 
