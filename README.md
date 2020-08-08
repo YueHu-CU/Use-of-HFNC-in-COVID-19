@@ -23,12 +23,11 @@ Python is our programming language. You will need the following Python packages
 - Seaborn
 
 ## Data
+The `Data` folder contains the data files to replicate results in the paper, which were obtained from the following sources
 
 - IHME COVID-19 Projections: https://covid19.healthdata.org/united-states-of-america (accessed on 2020-08-02)
 
 - COVID-19 Forecast Hub: https://viz.covid19forecasthub.org (accessed on 2020-08-02)
-
-The `Data` folder contains the data files to replicate results in the paper. 
 
 ## Code
 
