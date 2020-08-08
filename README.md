@@ -37,4 +37,4 @@ The `Data` folder should be placed within a parent folder that contains all the 
 
 The codes should be run sequentially. For example, to examine the impact of use of high-flow nasal cannula on mortality in the United States (Figure 2 in the paper), you will need to first run `Parameters.py` to set parameters on the national level, and then run `Compare Policies.py` to obtain the output. 
 
-Please contact the authors of the paper for guidance or clarification on navigating the code.
+Please contact the authors of the paper for guidance or clarification on the code.
