@@ -1,1 +1,1 @@
-# Use-of-HFNC-in-COVID-19
+# Use of High-Flow Nasal Cannula Use in COVID-19
