@@ -1,4 +1,4 @@
-# Use of High-Flow Nasal Cannula in COVID-19
+# The Impact of High-Flow Nasal Cannula Use on Patient Mortality and the Availability of Mechanical Ventilators in COVID-19
 
 ## About
 This repository contains code and the data for the working paper: **The Impact of High-Flow Nasal Cannula Use on Patient Mortality and the Availability of Mechanical Ventilators in COVID-19**. 
