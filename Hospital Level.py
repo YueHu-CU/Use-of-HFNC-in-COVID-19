@@ -5,13 +5,6 @@ os.chdir('/Users/yhu22/Dropbox/My Work/Covid-19/GitHub')
 import scipy.stats
 import random
 
-def mean_confidence_interval(data, confidence = 0.95):
-    a = 1.0 * np.array(data)
-    n = len(a)
-    m, se = np.mean(a), scipy.stats.sem(a)
-    h = se * scipy.stats.t.ppf((1 + confidence) / 2., n-1)
-    return m, m-h, m+h
-
 # Parameters to enumerate
 MV_R = [25, 50, 100, 150, 200, 250]
 
@@ -33,6 +26,14 @@ for k in Ratios:
         Death_Inner = []
         random.seed(4) 
         
+        execfile("Parameter.py") 
+
+        execfile("Policy_No_HFNC.py") 
+        
+        execfile("Policy_HFNC_Ext_MV_10.py") 
+        
+        Death_R.append(round(Obj_Policy_1 - Obj_Proposed_10_Post))
+        
         for j in range(100):
             
             execfile("Parameter_Random Sample.py") 
@@ -46,9 +47,8 @@ for k in Ratios:
     
             Death_Inner.append(round(Obj_Policy_1 - Obj_Proposed_10_Post))
 
-        Death_R.append(mean_confidence_interval(Death_Inner, confidence = 0.95)[0])
-        Death_R_Lower.append(mean_confidence_interval(Death_Inner, confidence = 0.95)[1])
-        Death_R_Upper.append(mean_confidence_interval(Death_Inner, confidence = 0.95)[2])
+        Death_R_Lower.append(min(Death_Inner))
+        Death_R_Upper.append(max(Death_Inner))
 
     if hos_size == 100:
         Death_R[3] = 0; Death_R[4] = 0; Death_R[5] = 0
@@ -67,5 +67,5 @@ for k in Ratios:
         Death_R_8 = Death_R
         Death_R_8_Lower = Death_R_Lower
         Death_R_8_Upper = Death_R_Upper
-    
-    
+        
+ 

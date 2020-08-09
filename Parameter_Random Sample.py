@@ -126,16 +126,17 @@ current_death = 152930.653
 ###############################################################################
 ####### HOSPITAL LEVEL
 # Scale peak all-bed demand to peak hospital inpatient demand
-#hos_size = 100
-#max_all_bed = 33293.50618
-#ratio_region_to_nation = hos_size / max_all_bed
-#Lambda = [x * ratio_region_to_nation for x in Lambda]
+hos_size = 1000
+max_all_bed = 33293.50618
+ratio_region_to_nation = hos_size / max_all_bed
+Lambda = [x * ratio_region_to_nation for x in Lambda]
 
 
 ###############################################################################
 T_div = 24; dt = 1 / T_div
 Lambda = [x for item in Lambda for x in repeat(item, T_div)]
 T = len(Lambda)
+
 
 ###############################################################################
 # Plot arrival rate

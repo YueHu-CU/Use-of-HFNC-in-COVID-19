@@ -10,23 +10,23 @@ font = 22; div = 1000
 ###############################################################################
 ###### NATIONAL LEVEL
 ### IHME (full time period)
-#Data_inc_death = pd.read_csv('Data/IHME_US_Death.csv')
-#All_ven = []
-#for i in range(Data_inc_death.shape[0]):
-#    All_ven.append(Data_inc_death.values.tolist()[i][0])
-#fitted_factor = 2.15
-#Lambda = [x * fitted_factor for x in All_ven]    
-#current_death = 152930.653
-
-
-#### IHME (retrospect study)
-Data_inc_death = pd.read_csv('Data/IHME_US_Death_Retrospect.csv')
+Data_inc_death = pd.read_csv('Data/IHME_US_Death.csv')
 All_ven = []
 for i in range(Data_inc_death.shape[0]):
     All_ven.append(Data_inc_death.values.tolist()[i][0])
 fitted_factor = 2.15
-Lambda = [x * fitted_factor for x in All_ven]
+Lambda = [x * fitted_factor for x in All_ven]    
 current_death = 152930.653
+
+
+#### IHME (retrospect study)
+#Data_inc_death = pd.read_csv('Data/IHME_US_Death_Retrospect.csv')
+#All_ven = []
+#for i in range(Data_inc_death.shape[0]):
+#    All_ven.append(Data_inc_death.values.tolist()[i][0])
+#fitted_factor = 2.15
+#Lambda = [x * fitted_factor for x in All_ven]
+#current_death = 152930.653
 
 
 #### COVID-19 Simulator 
@@ -125,26 +125,27 @@ current_death = 152930.653
 ###############################################################################
 ####### HOSPITAL LEVEL
 # Scale peak all-bed demand to peak hospital inpatient demand
-#hos_size = 250
-#max_all_bed = 33293.50618
-#ratio_region_to_nation = hos_size / max_all_bed
-#Lambda = [x * ratio_region_to_nation for x in Lambda]
+hos_size = 1000
+max_all_bed = 33293.50618
+ratio_region_to_nation = hos_size / max_all_bed
+Lambda = [x * ratio_region_to_nation for x in Lambda]
 
 
 ###############################################################################
 T_div = 24; dt = 1 / T_div
 Lambda = [x for item in Lambda for x in repeat(item, T_div)]
+T = len(Lambda)
 
 
 ###############################################################################
 # Plot arrival rate
-labelplace = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov']
-T = len(Lambda)
-plt.figure(figsize=(10, 8))
-plt.plot(Lambda, '-', color = 'black', lw = 3)
-plt.ylabel('MV demand', fontsize = font)
-plt.xticks(np.arange(0, T, 30 * T_div), labelplace, fontsize = font)
-plt.yticks(fontsize = font)
+#labelplace = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov']
+#T = len(Lambda)
+#plt.figure(figsize=(10, 8))
+#plt.plot(Lambda, '-', color = 'black', lw = 3)
+#plt.ylabel('MV demand', fontsize = font)
+#plt.xticks(np.arange(0, T, 30 * T_div), labelplace, fontsize = font)
+#plt.yticks(fontsize = font)
 
 
 ###############################################################################
